@@ -1,0 +1,6 @@
+<ul [class.nested-item]="!rootItem">
+  <ng-container *ngFor="let node of nodes">
+    <aft-file *ngIf="node.type === 'file'" [file]="node" [rootItem]="rootItem"></aft-file>
+    <aft-folder *ngIf="node.type === 'folder'" [folder]="node" [rootItem]="rootItem"></aft-folder>
+  </ng-container>
+</ul>

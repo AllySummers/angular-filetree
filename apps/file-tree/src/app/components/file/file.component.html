@@ -1,0 +1,13 @@
+<ng-container *ngIf="file">
+  <li [class.nested-item]="!rootItem">
+    <div class="content">
+      <span class="name">{{ file.name }}</span>
+      <div class="controls">
+        <button class="icon-btn btn" (click)="removeItem()">
+          <aft-icon-trash></aft-icon-trash>
+          <span class="sr-only">Remove folder</span>
+        </button>
+      </div>
+    </div>
+  </li>
+</ng-container>

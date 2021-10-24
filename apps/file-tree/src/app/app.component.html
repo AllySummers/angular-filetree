@@ -1,0 +1,26 @@
+<ng-container *ngIf="nodes$ | async as nodes">
+  <button class="add-folder-trigger btn" (click)="showFolderControl()">Add folder to root</button>
+
+  <aft-file-list [nodes]="nodes" [rootItem]="true"></aft-file-list>
+
+  <form *ngIf="showControl" (ngSubmit)="addFolder($event)">
+    <div class="add-folder">
+      <aft-icon-folder></aft-icon-folder>
+      <input [formControl]="folderName" type="text">
+      <button type="submit" [disabled]="!folderName.valid" class="icon-btn btn">
+        <aft-icon-check></aft-icon-check>
+        <span class="sr-only">Add file</span>
+      </button>
+      <button type="button" (click)="cancelAddFolder()" class="alt icon-btn btn">
+        <aft-icon-times></aft-icon-times>
+        <span class="sr-only">Cancel Adding</span>
+      </button>
+    </div>
+  </form>
+</ng-container>
+
+<hr>
+<h3>JSON</h3>
+<pre>
+  <code [innerText]="json$ | async | json"></code>
+</pre>

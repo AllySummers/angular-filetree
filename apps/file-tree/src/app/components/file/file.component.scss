@@ -1,0 +1,41 @@
+li {
+  list-style-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='far' width='20' height='20' data-icon='file' class='aft-icon-file' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='currentColor' d='M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48z'%3E%3C/path%3E%3C/svg%3E%0A");
+  height: 30px;
+  line-height: 30px;
+
+  height: 30px;
+  line-height: 30px;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .controls {
+    margin-left: 0.5rem;
+    display: none;
+    flex-direction: row;
+    gap: 0.25rem;
+
+    ::ng-deep {
+      aft-icon-plus,
+      aft-icon-trash {
+        svg {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .controls {
+      display: flex;
+    }
+  }
+}
+
+::marker {
+  font-size: 2.5rem;
+}
+

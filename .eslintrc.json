@@ -1,0 +1,162 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx"],
+  "extends": ["plugin:import/recommended", "plugin:import/typescript"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "apps/**/tsconfig.*?.json"
+      }
+    },
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": ["off"],
+        "quotes": "off",
+        "@typescript-eslint/quotes": ["warn", "single"],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+          "warn",
+          {
+            "prefer": "type-imports"
+          }
+        ],
+        "@typescript-eslint/adjacent-overload-signatures": ["warn"],
+        "@typescript-eslint/array-type": ["warn", { "default": "generic" }],
+        "@typescript-eslint/ban-ts-comment": ["warn"],
+        "@typescript-eslint/class-literal-property-style": ["warn"],
+        "@typescript-eslint/consistent-indexed-object-style": [
+          "warn",
+          "record"
+        ],
+        "@typescript-eslint/consistent-type-assertions": [
+          "warn",
+          {
+            "assertionStyle": "as",
+            "objectLiteralTypeAssertions": "allow-as-parameter"
+          }
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["warn", "interface"],
+        "@typescript-eslint/member-delimiter-style": [
+          "warn",
+          {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": true
+            }
+          }
+        ],
+        "@typescript-eslint/member-ordering": ["warn"],
+        "@typescript-eslint/method-signature-style": ["warn", "property"],
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+            "selector": "default",
+            "modifiers": ["requiresQuotes", "destructured"]
+          }
+        ],
+        "@typescript-eslint/no-extra-non-null-assertion": ["warn"],
+        "@typescript-eslint/no-inferrable-types": ["warn"],
+        "@typescript-eslint/no-non-null-asserted-optional-chain": ["warn"],
+        "@typescript-eslint/no-unnecessary-boolean-literal-compare": ["warn"],
+        "@typescript-eslint/no-unnecessary-type-arguments": ["warn"],
+        "@typescript-eslint/no-unnecessary-type-constraint": ["warn"],
+        "@typescript-eslint/no-unnecessary-type-assertion": ["warn"],
+        "@typescript-eslint/non-nullable-type-assertion-style": ["warn"],
+        "@typescript-eslint/prefer-as-const": ["warn"],
+        "@typescript-eslint/prefer-nullish-coalescing": ["warn"],
+        "@typescript-eslint/prefer-optional-chain": ["warn"],
+        "@typescript-eslint/prefer-reduce-type-parameter": ["warn"],
+        "@typescript-eslint/sort-type-union-intersection-members": ["warn"],
+        "@typescript-eslint/type-annotation-spacing": ["warn"],
+        "@typescript-eslint/unified-signatures": ["warn"],
+        "@typescript-eslint/no-confusing-non-null-assertion": ["warn"],
+        "brace-style": "off",
+        "@typescript-eslint/brace-style": [
+          "error",
+          "1tbs",
+          { "allowSingleLine": true }
+        ],
+        "comma-spacing": "off",
+        "@typescript-eslint/comma-spacing": ["warn"],
+        "dot-notation": "off",
+        "@typescript-eslint/dot-notation": ["error"],
+        "func-call-spacing": "off",
+        "@typescript-eslint/func-call-spacing": ["error"],
+        "keyword-spacing": "off",
+        "@typescript-eslint/keyword-spacing": ["error"],
+        "lines-between-class-members": "off",
+        "@typescript-eslint/lines-between-class-members": [
+          "warn",
+          { "exceptAfterOverload": true }
+        ],
+        "no-array-constructor": "off",
+        "@typescript-eslint/no-array-constructor": ["error"],
+        "no-dupe-class-members": "off",
+        "@typescript-eslint/no-dupe-class-members": ["error"],
+        "no-empty-function": "off",
+        "@typescript-eslint/no-empty-function": ["off"],
+        "no-extra-parens": "off",
+        "@typescript-eslint/no-extra-parens": ["error"],
+        "no-extra-semi": "off",
+        "@typescript-eslint/no-extra-semi": ["error"],
+        "no-implied-eval": "off",
+        "@typescript-eslint/no-implied-eval": ["error"],
+        "no-invalid-this": "off",
+        "@typescript-eslint/no-invalid-this": ["error"],
+        "no-loss-of-precision": "off",
+        "@typescript-eslint/no-loss-of-precision": ["error"],
+        "no-magic-numbers": "off",
+        "no-throw-literal": "off",
+        "@typescript-eslint/no-throw-literal": ["error"],
+        "no-unused-expressions": "off",
+        "@typescript-eslint/no-unused-expressions": ["error"],
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": ["error", {
+          "functions": false
+        }],
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": ["error"],
+        "object-curly-spacing": "off",
+        "@typescript-eslint/object-curly-spacing": ["warn", "always"],
+        "semi": "off",
+        "@typescript-eslint/semi": ["warn"],
+        "require-await": "off",
+        "@typescript-eslint/require-await": ["error"],
+        "space-before-function-paren": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/space-before-function-paren": [
+          "error",
+          {
+            "anonymous": "never",
+            "named": "never",
+            "asyncArrow": "always"
+          }
+        ],
+        "space-infix-ops": "off",
+        "@typescript-eslint/space-infix-ops": ["error", { "int32Hint": false }]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}

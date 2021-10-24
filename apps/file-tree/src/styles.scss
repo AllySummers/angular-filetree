@@ -1,0 +1,59 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+}
+
+body {
+  padding: 1rem 1rem 1rem 3rem;
+}
+
+li.nested-item {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: -45px;
+    bottom: 10px;
+    height: 2px;
+    width: 15px;
+    content: '';
+    background: grey;
+  }
+}
+
+.btn {
+  background-color: black;
+  border-radius: 2px;
+  outline: none;
+  padding: 0.5rem;
+  color: white;
+  fill: white;
+  cursor: pointer;
+}
+
+button.icon-btn {
+  padding: 0.2rem;
+}
+
+button.alt {
+  svg {
+    fill: black;
+  }
+  color: black;
+  background-color: white;;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  border: 0;
+}
